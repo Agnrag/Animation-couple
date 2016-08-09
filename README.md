@@ -1,4 +1,5 @@
 ANIMATION COUPLE
+Animation-couple/animation_result.png
 
 Opis projektu:
 - wszystkie kształty stworzone wyłącznie w CSSie;
