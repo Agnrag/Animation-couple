@@ -1,0 +1,78 @@
+//kolor tła i ciemniejszy kolor obramowania elementów;
+//przyjmuje za argument kolor ze zmiennej;
+@mixin borderBackgroundcolor($colorBase) {
+    background-color: $colorBase;
+    border: 6px solid darken($colorBase, 6);
+    box-sizing: border-box;
+}
+
+
+//kształt koła i zmiana jego koloru wraz z obramowaniem:
+@mixin circle($circleWidth, $circleHeight, $colorBase) {
+    width: $circleWidth;
+    height: $circleHeight;
+    border-radius: 50%;
+    @include borderBackgroundcolor($colorBase);
+}
+
+//policzki:
+@mixin cheek($cheekWidth, $cheekHeight, $cheekColor) {
+    width: $cheekWidth;
+    height: $cheekHeight;
+    background: $cheekColor;
+    border-radius: 50%;
+}
+
+//usta:
+@mixin mouth($mouthWidth, $mouthHeight, $mouthColor) {
+    width: $mouthWidth;
+    height: $mouthHeight;
+    border-bottom: 10px solid $mouthColor;
+    border-radius: 46%;
+}
+
+//okulary:
+@mixin eyeGlass {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 7px solid $face-color;
+    box-shadow: 0 0 0 4px $boy-glasses;
+    background: black;
+    box-sizing: border-box;
+}
+
+//mrugnięcie okiem dziewczyny:
+@mixin eyeWink ($eyeWinkWidth, $eyeWinkHeight) {
+    width: $eyeWinkWidth;
+    height: $eyeWinkHeight;
+    border-bottom: 10px solid black;
+    border-radius: 46%;  
+}
+
+//kształt tułowia dziewczyny:
+@mixin bottom($bottomWidth, $bottomHeight, $colorBase) {
+    width: $bottomWidth;
+    height: $bottomHeight;
+    border-radius: 50% 50% 8% 8%;
+    @include borderBackgroundcolor($colorBase);
+}
+
+//ręka:
+@mixin hand($colorHandShirt) {
+    width: 40px;
+    height: 100px;
+    background: $face-color;
+    border-radius: 40%;
+    border-top: 60px solid $colorHandShirt;
+    border-bottom: 6px solid darken($border-hand-color, 6);
+    box-sizing: border-box;
+}
+
+//stopa:
+@mixin shoes {
+    width: 50px;
+    height: 17px;
+    background: $face-color;
+    border-radius: 0 0 40% 40%;
+}

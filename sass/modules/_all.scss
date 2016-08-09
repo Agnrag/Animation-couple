@@ -1,0 +1,274 @@
+//import colors of project and mixins
+@import "colors";
+@import "mixin-body-shape";
+
+//gradient w tle:
+body {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 5%, rgba(209,238,238,1) 46%, rgba(209,238,238,1) 59%, rgba(127,230,101,1) 65%, rgba(84,168,61,1) 75%, rgba(34,102,15,1) 90%, rgba(34,102,15,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(5%, rgba(255,255,255,1)), color-stop(46%, rgba(209,238,238,1)), color-stop(59%, rgba(209,238,238,1)), color-stop(65%, rgba(127,230,101,1)), color-stop(75%, rgba(84,168,61,1)), color-stop(90%, rgba(34,102,15,1)), color-stop(100%, rgba(34,102,15,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 5%, rgba(209,238,238,1) 46%, rgba(209,238,238,1) 59%, rgba(127,230,101,1) 65%, rgba(84,168,61,1) 75%, rgba(34,102,15,1) 90%, rgba(34,102,15,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 5%, rgba(209,238,238,1) 46%, rgba(209,238,238,1) 59%, rgba(127,230,101,1) 65%, rgba(84,168,61,1) 75%, rgba(34,102,15,1) 90%, rgba(34,102,15,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 5%, rgba(209,238,238,1) 46%, rgba(209,238,238,1) 59%, rgba(127,230,101,1) 65%, rgba(84,168,61,1) 75%, rgba(34,102,15,1) 90%, rgba(34,102,15,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 5%, rgba(209,238,238,1) 46%, rgba(209,238,238,1) 59%, rgba(127,230,101,1) 65%, rgba(84,168,61,1) 75%, rgba(34,102,15,1) 90%, rgba(34,102,15,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#22660f', GradientType=0 );
+
+}
+
+//ustawienia tła:
+.animation-width {
+    width: 900px;
+    height: 600px;
+    margin: 22vh auto;
+}
+//-------------------------------------------------------
+//OGÓLNE USTAWIENIA CHŁOPAKA I DZIEWCZYNY
+//animacja chłopaka i dziewczyny i ustawienie ich w tle:
+.girl, .boy {
+    position: relative;
+    height: 300px;
+    top: 300px;
+}
+
+.girl {
+    float: left;
+    animation: girlMove 9s 2s forwards;
+}
+
+.boy {
+    float: right;
+    animation: boyMove 9s 2s forwards;
+}
+
+//-------------------------------------------------------
+//GŁOWA I WŁOSY
+//włosy chłopaka i dziewczyny:
+.girl-hair {
+    @include bottom(200px, 220px, $girl-hair-color);
+    position: relative;
+    
+}
+
+.boy-hair {
+    @include circle(200px, 180px, $boy-hair-color);
+}
+
+
+//ustawienie głowy chłopaka i dziewczyny:
+.girl-head, .boy-head {
+    @include circle(160px, 160px, $face-color);
+    position: absolute;
+    top: 20px;
+    z-index: 1;
+}
+
+.girl-head {
+    left: 16px;
+    z-index: 1;
+}
+
+.boy-head {
+    left: 20px;
+}
+
+
+//oczy
+//ogólne ustawienie oczów dziewczyny i chłopaka + animacja mrugnięcia okiem:
+.girl-eye-2 {
+    @include circle(20px, 20px, $eye-color);
+}
+
+.girl-eye-1 {
+    position: absolute;
+    animation: eyeeWink 11s forwards;
+}
+
+.girl-eye-2, .boy-eye-1, .boy-eye-2 {
+    position: absolute;
+    top: 40px;
+}
+
+.girl-eye-1, .boy-eye-1 {
+    right: 30px;
+}
+
+.girl-eye-2, .boy-eye-2 {
+    left: 30px;
+}
+
+//okulary chłopaka:
+.boy-eye-1, .boy-eye-2 {
+    @include eyeGlass;
+}
+
+.boy-eye-1-glass, .boy-eye-2-glass, .boy-eye-3-glass {
+    position: absolute;
+    background: $boy-glasses;
+    height: 4px;
+}
+
+.boy-eye-1-glass {
+    top: 40px;
+    left: 8px;
+    width: 26px;
+    transform: rotate(45deg);
+}
+
+.boy-eye-2-glass {
+    width: 36px;
+    top: 50px;
+    left: 56px;
+}
+
+.boy-eye-3-glass {
+    transform: rotate(135deg);
+    right: 7px;
+    width: 25px;
+    top: 40px;
+}
+
+//policzki dziewczyny:
+.girl-cheek-1, .girl-cheek-2 {
+    @include cheek(35px, 35px, $cheek-color);
+    float: left;
+    position: absolute;
+    top: 70px;
+}
+
+.girl-cheek-1 {
+    right: 10px;
+}
+
+.girl-cheek-2 {
+    left: 10px;
+}
+
+//ustawienie ust dziewczyny i chłopaka oraz ich animacja:
+.girl-mouth, .boy-mouth {
+    @include mouth(20px, 20px, $mouth-color);
+    position: absolute;
+    top: 74px;
+    right: 64px;
+    visibility: hidden;
+    animation: mouthVisible 9s forwards;
+}
+
+//-------------------------------------------------------
+//TUŁÓW
+//ustawienie tułowia dziewczyny i chłopaka ponad inne części ciała:
+.girl-body, .boy-body {
+    z-index: 2;
+}
+
+//stworzenie i ustawienie tułowia chłopaka i dziewczyny:
+.girl-chest {
+    @include bottom(160px, 160px, $girl-chest-color);
+    position: absolute;
+    left: 20px;
+    bottom: -10px;
+}
+
+
+.boy-chest {
+    @include bottom(160px, 100px, $boy-shirt-color);
+    left: 20px;
+    bottom: 50px;
+    position: absolute;
+}
+
+//ręce
+//stworzenie i ustawienie rąk dziewczyny i chłopaka:
+.boy-hand-1, .boy-hand-2 {
+    @include hand($boy-shirt-color);
+    position: absolute;
+    bottom: 10px;
+    z-index: 2;
+}
+
+.girl-hand-1, .girl-hand-2 {
+    @include hand($girl-chest-color);
+    position: absolute;
+    bottom: 10px;
+    z-index: 2;
+}
+
+.girl-hand-1, .boy-hand-1 {
+    left: 24px;
+}
+
+.girl-hand-2, .boy-hand-2 {
+    left: 136px;
+}
+
+
+//animacja dla rąk dziewczyny i chłopaka:
+.girl-hand-2 {
+    animation: girlMoveHandLeft 4s 7s forwards;
+}
+
+
+.boy-hand-1 {
+    animation: boyMoveHandRight 4s 7s forwards;
+}
+
+//-------------------------------------------------------
+//DOLNA CZĘŚĆ CIAŁA
+//ustawienie dolnej części ciała chłopaka:
+.boy-bottom {
+    width: 160px;
+    height: 20px;
+    @include borderBackgroundcolor($boy-trousers-color);
+    position: absolute;
+    left: 20px;
+    top: 66px;
+}
+
+.boy-footer {
+    position: absolute;
+}
+
+.boy-foot-1, .boy-foot-2 {
+    position: absolute;
+    top: 85px;
+    width: 80px;
+    height: 45px;
+    border-radius: 0 0 20% 20%;
+    @include borderBackgroundcolor($boy-trousers-color);
+}
+
+.boy-foot-1 {
+    left: 20px;
+}
+
+.boy-foot-2 {
+    left: 100px;
+}
+
+//stopy
+//ustawienie stóp chłopaka i dziewczyny:
+.girl-shoes-1, .girl-shoes-2, .boy-shoes-1, .boy-shoes-2 {
+    @include shoes;
+    position: absolute;
+}
+
+.girl-shoes-1, .girl-shoes-2 {
+    bottom: -25px;
+}
+
+.boy-shoes-1, .boy-shoes-2 {
+    bottom: -145px;
+}
+
+//ustawienie animacji stóp chłopaka i dziewczyny:
+.girl-shoes-1, .boy-shoes-2 {
+    left: 110px;
+    animation: footMove1 0.5s 2s ease-out 16;
+}
+
+.girl-shoes-2, .boy-shoes-1 {
+    left: 40px;
+    animation: footMove2 0.5s 2s ease-out 16;
+}

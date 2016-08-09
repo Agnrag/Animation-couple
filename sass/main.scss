@@ -1,0 +1,11 @@
+//MODULES
+//all.scss - import all other modules
+@import "modules/all";
+
+@import "modules/colors";
+@import "modules/animation";
+@import "modules/mixin-body-shape";
+@import "modules/animation";
+    
+//PARTIALS
+@import "partials/reset";

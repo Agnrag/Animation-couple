@@ -1,0 +1,93 @@
+//animacja ruchu dziewczyny:
+@keyframes girlMove {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(235px);
+    }
+}
+
+//animacja ruchu chłopaka:
+@keyframes boyMove {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-235px);
+    }
+}
+
+//animacja mrugnięcia okiem:
+@keyframes eyeeWink {
+    0% {
+        @include circle(20px,20px,black);
+        top: 40px;
+    }
+    90% {
+        @include circle(20px,20px,black);
+        top: 40px;
+    }
+    100% {
+        @include eyeWink(20px,20px);
+        top: 30px;
+    }
+}
+
+//animacja ust:
+@keyframes mouthVisible {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+    }
+}
+
+//animacja ruchu ręki dziewczyny:
+@keyframes girlMoveHandLeft {
+    0% {
+        transform:  rotate(0);
+        transform-origin: 9px 4px;
+    }
+    100% {
+        transform:  rotate(-40deg);
+        transform-origin: 9px 4px;
+    }
+}
+
+//animacja ruchu ręki chłopaka:
+@keyframes boyMoveHandRight {
+    0% {
+        transform:  rotate(0);
+        transform-origin: 40px -2px;;
+    }
+    100% {
+        transform:  rotate(40deg);
+        transform-origin: 40px -4px;
+    }
+}
+
+
+//animacja chodu dziewczyny:
+@keyframes footMove1 {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(5px);
+    }
+}
+
+//animacja chodu chłopaka:
+@keyframes footMove2 {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(-5px);
+    }
+}
