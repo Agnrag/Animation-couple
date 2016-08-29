@@ -43,6 +43,11 @@ body {
     animation: boyMove 9s 2s forwards;
 }
 
+//ustawienie pozycji absolutnej dla elementów ciała chłopaka i dziewczyny:
+.girl-head, .boy-head, .girl-eye-1, .girl-eye-2, .boy-eye-1, .boy-eye-2, .boy-eye-1-glass, .boy-eye-2-glass, .boy-eye-3-glass, .girl-cheek-1, .girl-cheek-2, .girl-mouth, .boy-mouth, .girl-chest, .boy-chest, .boy-hand-1, .boy-hand-2, .girl-hand-1, .girl-hand-2, .boy-bottom, .boy-footer, .boy-foot-1, .boy-foot-2, .girl-shoes-1, .girl-shoes-2, .boy-shoes-1, .boy-shoes-2 {
+    position: absolute;
+}
+
 //-------------------------------------------------------
 //GŁOWA I WŁOSY
 //włosy chłopaka i dziewczyny:
@@ -60,7 +65,6 @@ body {
 //ustawienie głowy chłopaka i dziewczyny:
 .girl-head, .boy-head {
     @include circle(160px, 160px, $face-color);
-    position: absolute;
     top: 20px;
     z-index: 1;
 }
@@ -82,12 +86,10 @@ body {
 }
 
 .girl-eye-1 {
-    position: absolute;
     animation: eyeeWink 11s forwards;
 }
 
 .girl-eye-2, .boy-eye-1, .boy-eye-2 {
-    position: absolute;
     top: 40px;
 }
 
@@ -105,7 +107,6 @@ body {
 }
 
 .boy-eye-1-glass, .boy-eye-2-glass, .boy-eye-3-glass {
-    position: absolute;
     background: $boy-glasses;
     height: 4px;
 }
@@ -134,7 +135,6 @@ body {
 .girl-cheek-1, .girl-cheek-2 {
     @include cheek(35px, 35px, $cheek-color);
     float: left;
-    position: absolute;
     top: 70px;
 }
 
@@ -149,7 +149,6 @@ body {
 //ustawienie ust dziewczyny i chłopaka oraz ich animacja:
 .girl-mouth, .boy-mouth {
     @include mouth(20px, 20px, $mouth-color);
-    position: absolute;
     top: 74px;
     right: 64px;
     visibility: hidden;
@@ -166,7 +165,6 @@ body {
 //stworzenie i ustawienie tułowia chłopaka i dziewczyny:
 .girl-chest {
     @include bottom(160px, 160px, $girl-chest-color);
-    position: absolute;
     left: 20px;
     bottom: -10px;
 }
@@ -176,21 +174,18 @@ body {
     @include bottom(160px, 100px, $boy-shirt-color);
     left: 20px;
     bottom: 50px;
-    position: absolute;
 }
 
 //ręce
 //stworzenie i ustawienie rąk dziewczyny i chłopaka:
 .boy-hand-1, .boy-hand-2 {
     @include hand($boy-shirt-color);
-    position: absolute;
     bottom: 10px;
     z-index: 2;
 }
 
 .girl-hand-1, .girl-hand-2 {
     @include hand($girl-chest-color);
-    position: absolute;
     bottom: 10px;
     z-index: 2;
 }
@@ -221,17 +216,11 @@ body {
     width: 160px;
     height: 20px;
     @include borderBackgroundcolor($boy-trousers-color);
-    position: absolute;
     left: 20px;
     top: 66px;
 }
 
-.boy-footer {
-    position: absolute;
-}
-
 .boy-foot-1, .boy-foot-2 {
-    position: absolute;
     top: 85px;
     width: 80px;
     height: 45px;
@@ -251,7 +240,6 @@ body {
 //ustawienie stóp chłopaka i dziewczyny:
 .girl-shoes-1, .girl-shoes-2, .boy-shoes-1, .boy-shoes-2 {
     @include shoes;
-    position: absolute;
 }
 
 .girl-shoes-1, .girl-shoes-2 {
