@@ -1,8 +1,12 @@
-ANIMATION COUPLE
+##ANIMATION COUPLE
 
 Opis projektu:
-- wszystkie kształty stworzone wyłącznie w CSSie;
-- wszystkie animacje stworzone wyłącznie w CSSie;
-- do maksymalnej optymalizacji kodu wykorzystano SASS.
+
+Projekt od początku do końca wykonany wyłącznie przeze mnie. Wygląd ludzików i ich kolorystyka również są mojego autorstwa. Nie ściągałam gotowych kształtów z innych źródeł.
+Ponadto:
+
+- wszystkie kształty stworzyłam wyłącznie w CSSie;
+- wszystkie animacje stworzyłam wyłącznie w CSSie;
+- do maksymalnej optymalizacji kodu wykorzystałam SASS.
 
 6-8 sierpnia 2016 r.
