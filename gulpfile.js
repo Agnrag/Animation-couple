@@ -7,7 +7,7 @@ gulp.task("scss", function() {
     .pipe(sourcemaps.init())
     .pipe(sass({
         errLogToConsole: true,
-        outputStyle: "extended",
+        outputStyle: "compressed",
         //sourceComments: true,
     }).on("error", sass.logError))
     .pipe(sourcemaps.write())
